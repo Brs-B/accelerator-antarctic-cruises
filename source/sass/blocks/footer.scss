@@ -59,6 +59,7 @@
 
   @include vp-767 {
     margin-left: 0;
+    width: 100%;
   }
 }
 
@@ -76,12 +77,6 @@
     column-gap: 0;
     padding-top: 10px;
     flex-direction: column;
-  }
-}
-
-.footer__menu {
-  @include vp-767 {
-    width: 100%;
   }
 }
 
