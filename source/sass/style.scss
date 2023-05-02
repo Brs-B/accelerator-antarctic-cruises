@@ -6,7 +6,6 @@
 // @import "vendor/swiper";
 
 // Global
-// ---------------------------------
 
 @import "variables";
 @import "mixins";
@@ -16,7 +15,9 @@
 @import "global/container";
 
 // Blocks
-// ---------------------------------
+
+@import "blocks/header";
+@import "blocks/nav";
 
 @import "blocks/btn";
 @import "blocks/modal";

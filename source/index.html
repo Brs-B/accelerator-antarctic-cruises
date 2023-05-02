@@ -7,11 +7,48 @@
     <meta name="description" content="Описание проекта">
     <title>Круизы в Антарктику</title>
     <link rel="stylesheet" href="css/style.min.css">
+    <link rel="preload" href="fonts/montserrat-regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-medium.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-semibold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-bold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <div class="container"></div>
+      <header class="header">
+        <div class="container">
+          <div class="header__wrapper header__wrapper--closed">
+            <a href="#">
+              <svg class="header__logo" width="70" height="38" alt="Круизы в антарктику лого">
+                <use href="img/sprite.svg#icon-logo"></use>
+              </svg>
+            </a>
+            <nav class="header__nav nav nav--closed nav--nojs">
+              <button class="nav__toggle"><span class="visually-hidden">Открыть меню</span></button>
+              <ul>
+                <li>
+                  <a href="#">
+                    Преимущества
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Направления
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Ближайшие круизы
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Контакты
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </header>
       <main>
 
