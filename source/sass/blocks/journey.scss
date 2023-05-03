@@ -9,7 +9,7 @@
 
   @include vp-1023 {
     padding-top: 90px;
-    margin-bottom: 100px;
+    margin-bottom: 91px;
     align-items: start;
   }
 
@@ -37,6 +37,7 @@
   }
 
   @include vp-767 {
+    max-width: none;
     min-width: 290px;
     width: 100%;
     margin-right: 0;
@@ -81,6 +82,7 @@
   }
 
   @include vp-767 {
+    width: 100%;
     padding-top: 40px;
   }
 }
@@ -95,9 +97,7 @@
   }
 
   @include vp-767 {
-    min-width: 290px;
     width: 100%;
-    min-height: 156px;
     height: 100%;
   }
 }
