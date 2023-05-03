@@ -1,0 +1,135 @@
+.catalog {
+  position: relative;
+  overflow: hidden;
+}
+
+.catalog__wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 85px;
+  margin-bottom: 120px;
+}
+
+.catalog__wrapper h2 {
+  font-family: $ff-montserrat;
+  font-size: $fs-huge;
+  line-height: $fh-mega;
+  font-weight: $fw-semibold;
+  color: $color-dark-blue;
+  margin: 0;
+  margin-bottom: 49px;
+  z-index: 5;
+}
+
+.catalog__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.catalog__block {
+  position: relative;
+  width: 260px;
+  height: 386px;
+}
+
+.catalog__block img {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.catalog__block h3 {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  z-index: 5;
+  font-family: $ff-montserrat;
+  font-size: $fs-normal;
+  line-height: $fh-average;
+  font-weight: $fw-medium;
+  color: $color-white;
+  margin: 0;
+}
+
+.catalog__pop-up {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 260px;
+  height: 386px;
+  padding-top: 29px;
+  padding-left: 25px;
+  padding-right: 25px;
+  position: relative;
+  z-index: 5;
+  background-color: $color-dark-blue;
+}
+
+.catalog__pop-up h4 {
+  font-family: $ff-montserrat;
+  font-size: $fs-normal;
+  line-height: $fh-average;
+  font-weight: $fw-medium;
+  color: $color-white;
+  margin: 0;
+  margin-bottom: 14px;
+}
+
+.catalog__pop-up p:nth-child(even) {
+  font-family: $ff-montserrat;
+  font-size: $fs-small;
+  line-height: $fh-decent;
+  font-weight: $fw-medium;
+  color: $color-white;
+  margin: 0;
+  margin-bottom: 1px;
+}
+
+.catalog__pop-up p:nth-child(odd) {
+  font-family: $ff-montserrat;
+  font-size: $fs-small;
+  line-height: $fh-decent;
+  font-weight: $fw-regular;
+  color: $color-grey;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.catalog__block:hover h3 {
+  top: 30px;
+  left: 25px;
+  bottom: none;
+  z-index: 5;
+}
+
+.catalog__block:hover .catalog__pop-up,
+.catalog__block:focus .catalog__pop-up {
+  visibility: visible;
+}
+
+.catalog__block a {
+  display: inline-block;
+  cursor: pointer;
+  font-family: $ff-montserrat;
+  font-size: $fs-small;
+  line-height: $fh-decent;
+  font-weight: $fw-regular;
+  background-color: $color-white;
+  padding: 10px 48px;
+  color: $color-dark-blue;
+  margin-top: 17px;
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+}
+
+.catalog__block--atlantis a {
+  margin-top: 10px;
+}
