@@ -168,6 +168,11 @@
   cursor: pointer;
 }
 
+input[type="checkbox"]:focus ~ .booking__form-checkbox {
+  outline: 2px solid $color-default-white;
+  outline-offset: 2px;
+}
+
 .booking__form-checkbox {
   display: inline-block;
   position: relative;

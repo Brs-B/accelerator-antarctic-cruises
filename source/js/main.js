@@ -3,6 +3,7 @@ import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
 
 import './utils/header-nav';
+import './utils/no-js';
 
 // ---------------------------------
 

@@ -1,5 +1,6 @@
 let nav = document.querySelector('.nav');
 let toggle = document.querySelector('.nav__toggle');
+let header = document.querySelector('.header');
 let headerWrapper = document.querySelector('.header__wrapper');
 
 if (toggle) {
@@ -17,6 +18,13 @@ if (toggle) {
     } else {
       headerWrapper.classList.remove('header__wrapper--opened');
       headerWrapper.classList.add('header__wrapper--closed');
+    }
+    if (header.classList.contains('header--closed')) {
+      header.classList.remove('header--closed');
+      header.classList.add('header--opened');
+    } else {
+      header.classList.remove('header--opened');
+      header.classList.add('header--closed');
     }
   });
 }

@@ -1,0 +1,159 @@
+.contacts__wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 120px;
+  margin-bottom: 113px;
+
+  @include vp-1023 {
+    padding-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  @include vp-767 {
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 59px;
+    margin-bottom: 53px;
+  }
+}
+
+.contacts__map {
+  height: 313px;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  flex: 1;
+
+  @include vp-1023 {
+    filter: unset;
+    height: 335px;
+  }
+
+  @include vp-767 {
+    height: 316px;
+  }
+}
+
+.contacts__map iframe {
+  width: 560px;
+  height: 306px;
+
+  @include vp-1023 {
+    height: 335px;
+    width: 100%;
+    min-width: 324px;
+  }
+
+  @include vp-767 {
+    height: 316px;
+    min-width: 290px;
+  }
+}
+
+.contacts__map--nojs iframe {
+  display: none;
+}
+
+.contacts__map-image {
+  display: none;
+}
+
+.contacts__map--nojs .contacts__map-image {
+  display: block;
+}
+
+.contacts__text {
+  max-width: 500px;
+  padding-top: 75px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex: 1;
+
+  @include vp-1023 {
+    min-width: 324px;
+    padding-top: 65px;
+  }
+
+  @include vp-767 {
+    min-width: 290px;
+    padding-top: 0;
+    margin-left: 0;
+    order: -1;
+    margin-bottom: 40px;
+  }
+}
+
+.contacts__text h3 {
+  font-family: $ff-montserrat;
+  font-size: $fs-normal;
+  line-height: $fh-average;
+  font-weight: $fw-medium;
+  color: $color-dark-blue;
+  margin: 0;
+  margin-bottom: 32px;
+
+  @include vp-1023 {
+    margin-bottom: 28px;
+  }
+}
+
+.contacts__adress,
+.contacts__phone {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.contacts__adress svg {
+  @include vp-1023 {
+    margin-top: 5px;
+  }
+
+  @include vp-767 {
+    margin-top: 3px;
+  }
+}
+
+.contacts__adress {
+  margin-bottom: 20px;
+
+  @include vp-1023 {
+    align-items: start;
+    margin-right: 40px;
+  }
+
+  @include vp-767 {
+    margin-right: 0;
+  }
+}
+
+.contacts__adress p {
+  flex: 1;
+}
+
+.contacts__adress p,
+.contacts__phone a {
+  font-family: $ff-montserrat;
+  font-size: $fs-default;
+  line-height: $fh-default;
+  font-weight: $fw-regular;
+  color: $color-dark-blue;
+  margin: 0;
+  margin-left: 10px;
+}
+
+.contacts__phone a {
+  @include hover-focus {
+    opacity: 0.8;
+  }
+}
+
+.contacts__phone svg {
+  @include vp-767 {
+    margin-top: -2px;
+  }
+}
