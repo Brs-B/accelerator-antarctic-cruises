@@ -692,6 +692,19 @@ button,
     padding-top: 0;
   }
 }
+@media (max-width: 767px) {
+  .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
 
 .nav__toggle {
   display: none;
@@ -733,9 +746,11 @@ button,
 
 @media (max-width: 767px) {
   .nav--opened .nav__toggle {
-    position: absolute;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    position: relative;
     top: -28px;
-    left: 228px;
+    left: 14px;
   }
 }
 
@@ -789,6 +804,8 @@ button,
 }
 @media (max-width: 767px) {
   .nav ul {
+    position: relative;
+    top: -8px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -799,7 +816,6 @@ button,
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;
-    padding-top: 35px;
     row-gap: 8px;
   }
 }
