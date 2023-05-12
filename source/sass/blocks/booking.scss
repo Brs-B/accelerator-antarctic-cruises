@@ -1,6 +1,7 @@
 .booking {
   position: relative;
   overflow: hidden;
+  background-color: #bee0fb;
 }
 
 .booking__wrapper {
@@ -223,6 +224,10 @@ input[type="checkbox"]:checked ~ .booking__svg {
     left: 28px;
     line-height: $fh-tiny;
     padding-right: 50px;
+  }
+
+  @include hover-focus {
+    opacity: 0.8;
   }
 }
 
