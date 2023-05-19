@@ -577,7 +577,34 @@ button,
 
 @media (max-width: 767px) {
   .header--opened {
+    position: fixed;
     background-color: rgba(0, 43, 102, 0.5);
+  }
+}
+
+@media (max-width: 767px) {
+  .header--opened .header__overlay {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    width: 100%;
+    min-height: 100%;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -611,6 +638,7 @@ button,
 
 @media (max-width: 767px) {
   .header__wrapper--opened {
+    width: calc(100% - 36px);
     background-color: #f9fbfd;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -625,22 +653,32 @@ button,
     padding-left: 15px;
     padding-right: 15px;
     margin-left: 36px;
-    min-height: 568px;
+    min-height: 100vh;
   }
 }
 
+.header__link a {
+  width: 70px;
+  height: 38px;
+}
+@media (max-width: 1023px) {
+  .header__link a {
+    width: 38px;
+    height: 20px;
+  }
+}
 @media (max-width: 767px) {
-  .header__wrapper > a {
+  .header__link a {
     width: 42px;
     height: 22px;
   }
 }
 @media (hover: hover) {
-  .header__wrapper > a:hover:not(.focus-visible) {
+  .header__link a:hover:not(.focus-visible) {
     opacity: 0.8;
   }
 }
-.header__wrapper > a.focus-visible:focus {
+.header__link a.focus-visible:focus {
   opacity: 0.8;
 }
 
@@ -686,6 +724,9 @@ button,
 .nav {
   position: relative;
   padding-top: 8px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 @media (max-width: 1023px) {
   .nav {
@@ -703,6 +744,9 @@ button,
             flex-direction: column;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
 }
 
@@ -742,6 +786,16 @@ button,
   background-color: #f9fbfd;
   -webkit-box-shadow: 0 6px 0 0 #f9fbfd, 0 12px 0 0 #f9fbfd;
           box-shadow: 0 6px 0 0 #f9fbfd, 0 12px 0 0 #f9fbfd;
+}
+
+@media (max-width: 767px) {
+  .nav--opened {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    position: relative;
+    top: -7px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -788,9 +842,15 @@ button,
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-column-gap: 34px;
      -moz-column-gap: 34px;
           column-gap: 34px;
+  row-gap: 35px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -904,20 +964,20 @@ button,
   padding-top: 273px;
   margin-left: 95px;
   margin-bottom: 0;
-  height: 658px;
+  min-height: 658px;
 }
 @media (max-width: 1023px) {
   .main-block__text {
     padding-top: 270px;
     margin-left: 0;
-    height: 638px;
+    min-height: 638px;
   }
 }
 @media (max-width: 767px) {
   .main-block__text {
     padding-top: 175px;
     margin: 0 15px;
-    height: 500px;
+    min-height: 500px;
   }
 }
 
@@ -955,6 +1015,7 @@ button,
   color: #f9fbfd;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   margin: 0;
+  margin-bottom: 20px;
 }
 @media (max-width: 1023px) {
   .main-block__text p {
@@ -987,17 +1048,11 @@ button,
           justify-content: space-between;
   padding-top: 112px;
   margin-bottom: 145px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 @media (max-width: 1023px) {
   .journey__wrapper {
     padding-top: 90px;
     margin-bottom: 91px;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: start;
   }
 }
 @media (max-width: 767px) {
@@ -1030,10 +1085,12 @@ button,
           flex: 1;
   max-width: 512px;
   min-width: 400px;
+  padding-top: 57px;
   margin-right: 20px;
 }
 @media (max-width: 1023px) {
   .journey__text {
+    padding-top: 0;
     min-width: 324px;
     margin-right: 30px;
   }
@@ -1172,18 +1229,10 @@ button,
 }
 
 .advantages__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   z-index: 5;
 }
@@ -1194,10 +1243,15 @@ button,
 }
 @media (max-width: 767px) {
   .advantages__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
@@ -1464,15 +1518,7 @@ button,
 
 .catalog__pop-up {
   opacity: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  display: inline-block;
   width: 260px;
   height: 386px;
   padding-top: 29px;
@@ -1481,6 +1527,7 @@ button,
   position: relative;
   z-index: 5;
   background-color: #011c40;
+  overflow: auto;
 }
 @media (max-width: 1023px) {
   .catalog__pop-up {
@@ -1551,6 +1598,7 @@ button,
   padding: 10px 48px;
   color: #011c40;
   margin-top: 17px;
+  margin-bottom: 17px;
 }
 @media (hover: hover) {
   .catalog__block a:hover:not(.focus-visible) {
@@ -1629,6 +1677,7 @@ button,
           flex: 1;
   padding-top: 162px;
   z-index: 5;
+  margin-right: 15px;
 }
 @media (max-width: 1023px) {
   .booking__text {
@@ -1636,6 +1685,7 @@ button,
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin-right: 0;
     margin-bottom: 51px;
   }
 }
@@ -1700,6 +1750,7 @@ button,
 
 .booking__form {
   width: 403px;
+  max-height: 455px;
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 45px;
@@ -1720,6 +1771,7 @@ button,
 @media (max-width: 767px) {
   .booking__form {
     width: 100%;
+    max-height: 460px;
     margin: 0;
     padding-top: 35px;
     padding-left: 30px;
@@ -1728,7 +1780,7 @@ button,
   }
 }
 
-.booking__form p {
+.booking__form > p {
   font-family: "Montserrat", "Arial", sans-serif;
   font-size: 18px;
   line-height: 27px;
@@ -1738,7 +1790,7 @@ button,
   margin-bottom: 26px;
 }
 @media (max-width: 767px) {
-  .booking__form p {
+  .booking__form > p {
     font-size: 18px;
     line-height: 25px;
     text-align: center;
@@ -1756,7 +1808,10 @@ button,
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 21px;
+}
+
+.booking__form-block {
+  margin-bottom: 21px;
 }
 
 .booking__form-block input {
@@ -1773,6 +1828,15 @@ button,
 
 .booking__form-agreement {
   position: relative;
+  top: -5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+  margin-bottom: 21px;
+}
+
+.booking__form-agreement label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1782,11 +1846,12 @@ button,
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  top: -5px;
-  cursor: pointer;
+  margin-bottom: 8px;
+}
+@media (max-width: 767px) {
+  .booking__form-agreement label {
+    margin-bottom: 0;
+  }
 }
 
 input[type=checkbox]:focus ~ .booking__form-checkbox {
@@ -1838,15 +1903,25 @@ input[type=checkbox]:checked ~ .booking__svg {
   line-height: 13px;
   font-weight: 400;
   color: #f9fbfd;
+  margin: 0;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  top: 5px;
+  left: 5px;
 }
 @media (max-width: 767px) {
   .booking__agreement-text {
-    position: absolute;
-    top: 5px;
-    left: 28px;
+    left: 8px;
     line-height: 12px;
-    padding-right: 50px;
   }
 }
 @media (hover: hover) {
@@ -1869,9 +1944,14 @@ input[type=checkbox]:checked ~ .booking__svg {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 2px;
+  margin-top: 1px;
   padding-top: 11px;
   padding-bottom: 12px;
+}
+@media (max-width: 767px) {
+  .booking__button {
+    margin-top: 5px;
+  }
 }
 
 .booking__form-block,
@@ -2029,7 +2109,7 @@ input[type=checkbox]:checked ~ .booking__svg {
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 }
 
@@ -2062,6 +2142,7 @@ input[type=checkbox]:checked ~ .booking__svg {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 1023px) {
@@ -2075,9 +2156,6 @@ input[type=checkbox]:checked ~ .booking__svg {
   }
 }
 
-.contacts__adress {
-  margin-bottom: 20px;
-}
 @media (max-width: 1023px) {
   .contacts__adress {
     -webkit-box-align: start;
@@ -2099,7 +2177,7 @@ input[type=checkbox]:checked ~ .booking__svg {
 }
 
 .contacts__adress p,
-.contacts__phone a {
+.contacts__phone-number {
   font-family: "Montserrat", "Arial", sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -2109,6 +2187,20 @@ input[type=checkbox]:checked ~ .booking__svg {
   margin-left: 10px;
 }
 
+.contacts__phone a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 @media (hover: hover) {
   .contacts__phone a:hover:not(.focus-visible) {
     opacity: 0.8;
@@ -2120,7 +2212,8 @@ input[type=checkbox]:checked ~ .booking__svg {
 
 @media (max-width: 767px) {
   .contacts__phone svg {
-    margin-top: -2px;
+    position: relative;
+    top: -2px;
   }
 }
 
@@ -2192,12 +2285,12 @@ input[type=checkbox]:checked ~ .booking__svg {
 }
 
 @media (max-width: 1023px) {
-  .footer__nav > a {
+  .footer__link a {
     padding-top: 3px;
   }
 }
 @media (max-width: 767px) {
-  .footer__nav > a {
+  .footer__link a {
     display: block;
     padding-top: 0;
     width: 42px;
@@ -2224,17 +2317,20 @@ input[type=checkbox]:checked ~ .booking__svg {
 }
 
 .footer__menu {
-  padding-top: 9px;
+  margin-top: 9px;
   margin-left: 40px;
+  max-width: 760px;
 }
 @media (max-width: 1023px) {
   .footer__menu {
-    padding-top: 0;
+    margin-top: 0;
     margin-left: 25px;
+    max-width: 500px;
   }
 }
 @media (max-width: 767px) {
   .footer__menu {
+    max-width: none;
     margin-left: 0;
     width: 100%;
   }
@@ -2250,22 +2346,16 @@ input[type=checkbox]:checked ~ .booking__svg {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-column-gap: 33px;
-     -moz-column-gap: 33px;
-          column-gap: 33px;
+  gap: 33px;
 }
 @media (max-width: 1023px) {
   .footer__menu ul {
-    -webkit-column-gap: 23px;
-       -moz-column-gap: 23px;
-            column-gap: 23px;
+    gap: 23px;
   }
 }
 @media (max-width: 767px) {
   .footer__menu ul {
-    -webkit-column-gap: 0;
-       -moz-column-gap: 0;
-            column-gap: 0;
+    gap: 0;
     padding-top: 16px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2297,17 +2387,19 @@ input[type=checkbox]:checked ~ .booking__svg {
 }
 
 .footer__socials {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-top: 3px;
+  margin-top: 10px;
+  max-width: 120px;
+}
+@media (max-width: 1023px) {
+  .footer__socials {
+    max-width: 102px;
+    margin-top: 5px;
+  }
 }
 @media (max-width: 767px) {
   .footer__socials {
-    padding-top: 15px;
+    max-width: none;
+    margin-top: 15px;
   }
 }
 
@@ -2321,24 +2413,23 @@ input[type=checkbox]:checked ~ .booking__svg {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-column-gap: 15px;
-     -moz-column-gap: 15px;
-          column-gap: 15px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 15px;
 }
 @media (max-width: 1023px) {
   .footer__socials ul {
     position: relative;
     right: -4px;
-    -webkit-column-gap: 12px;
-       -moz-column-gap: 12px;
-            column-gap: 12px;
+    gap: 12px;
   }
 }
 @media (max-width: 767px) {
   .footer__socials ul {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     right: 4px;
   }
 }

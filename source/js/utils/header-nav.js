@@ -28,3 +28,16 @@ if (toggle) {
     }
   });
 }
+
+if (header) {
+  header.addEventListener('click', function (evt) {
+    if (evt.target.classList.contains('header__overlay')) {
+      header.classList.remove('header--opened');
+      header.classList.add('header--closed');
+      headerWrapper.classList.remove('header__wrapper--opened');
+      headerWrapper.classList.add('header__wrapper--closed');
+      nav.classList.remove('nav--opened');
+      nav.classList.add('nav--closed');
+    }
+  });
+}
