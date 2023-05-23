@@ -375,6 +375,10 @@ body {
   background-color: #ffffff;
 }
 
+body.locked {
+  overflow: hidden;
+}
+
 a {
   color: #000000;
   text-decoration: none;
@@ -653,7 +657,10 @@ button,
     padding-left: 15px;
     padding-right: 15px;
     margin-left: 36px;
-    min-height: 100vh;
+    max-height: 100vh;
+    height: 100vh;
+    overflow-y: auto;
+    display: block;
   }
 }
 
@@ -1233,6 +1240,7 @@ button,
   display: grid;
   -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
   gap: 40px;
   z-index: 5;
 }
@@ -2249,6 +2257,7 @@ input[type=checkbox]:checked ~ .booking__svg {
 @media (max-width: 1023px) {
   .footer__wrapper {
     padding-top: 47px;
+    padding-bottom: 40px;
   }
 }
 @media (max-width: 767px) {
@@ -2258,7 +2267,7 @@ input[type=checkbox]:checked ~ .booking__svg {
         -ms-flex-direction: column;
             flex-direction: column;
     padding-top: 40px;
-    padding-bottom: 35px;
+    padding-bottom: 28px;
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -2387,19 +2396,23 @@ input[type=checkbox]:checked ~ .booking__svg {
 }
 
 .footer__socials {
-  margin-top: 10px;
+  position: relative;
+  top: 7px;
+  right: -3px;
   max-width: 120px;
 }
 @media (max-width: 1023px) {
   .footer__socials {
     max-width: 102px;
-    margin-top: 5px;
+    top: 0;
+    right: 0;
   }
 }
 @media (max-width: 767px) {
   .footer__socials {
     max-width: none;
-    margin-top: 15px;
+    margin-top: 12px;
+    left: -4px;
   }
 }
 
@@ -2422,7 +2435,7 @@ input[type=checkbox]:checked ~ .booking__svg {
   .footer__socials ul {
     position: relative;
     right: -4px;
-    gap: 12px;
+    gap: 11px;
   }
 }
 @media (max-width: 767px) {
@@ -2435,29 +2448,17 @@ input[type=checkbox]:checked ~ .booking__svg {
 }
 
 .footer__socials a {
+  display: inline-block;
   margin: 0;
   padding: 5px;
 }
 
-.footer__socials-svg--ok {
-  width: 12px;
-  height: 20px;
-}
-@media (max-width: 1023px) {
-  .footer__socials-svg--ok {
-    width: 10px;
-    height: 16px;
-  }
-}
-
-.footer__socials-svg--dzen,
-.footer__socials-svg--reddit {
+.footer__socials-svg {
   width: 20px;
   height: 20px;
 }
 @media (max-width: 1023px) {
-  .footer__socials-svg--dzen,
-.footer__socials-svg--reddit {
+  .footer__socials-svg {
     width: 16px;
     height: 16px;
   }

@@ -60,7 +60,10 @@
     padding-left: 15px;
     padding-right: 15px;
     margin-left: 36px;
-    min-height: 100vh;
+    max-height: 100vh;
+    height: 100vh;
+    overflow-y: auto;
+    display: block;
   }
 }
 
